@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap');
+
+:root {
+    --red: #DA291C;
+    --blue: #006DB7;
+    --yellow: #FFD700;
+    --green: #00AF4D;
+    --black: #000000;
+    --white: #FFFFFF;
+
+    --font: 'Rubik', sans-serif;
+    --rootsize: 20px;
+    --maxsize: 1200px;
+}
+
+body {
+    background-image: url("website_images/mainbackground.png");
+    background-color: var(--yellow);
+    font-family: var(--font);
+    font-size: var(--rootsize);
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Fixed text sizes */
+p { font-size: 1rem; }
+h2 { font-size: 2.5rem; font-weight: 700; }
+h3 { font-size: 1.5rem; font-weight: 600; }
+
+/* Main structure */
+#container {
+    width: 100%;
+    max-width: var(--maxsize);
+    margin: 0 auto;
+    min-height: 200px;
+    background-color: var(--white);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    position: relative;
+}
+#logo { max-width: 15rem; }
+header button {
+    min-width: 3rem;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+header button span {
+    font-size: 0.8rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    background-color: var(--red);
+    color: var(--white);
+    border-radius: 50%;
+    display: block;
+    padding: 0.3rem;
+    box-sizing: border-box;
+    position: absolute;
+    top: -0.4rem;
+    left: -0.9rem;
+}
+#carticon {max-width: 3rem; }
+
+#cart {
+    background-color: var(--black);
+    color: var(--white);
+    width: 90%;
+    max-width: 500px;
+    border-left: 0.5rem solid var(--green);
+    border-bottom: 0.5rem solid var(--green);
+    position: absolute;
+    top: 76px;
+    right: -500px;
+    padding: 1rem;
+    opacity: 0;
+    transition: ease-in-out .5s;
+}
+#cart.show {
+    opacity: 1;
+    right: 0;
+}
+#cart h2 {
+    font-size: 1.2rem;
+}
+
+/* Handlevogn produktliste */
+#cart ul {
+    padding: 0;
+    list-style-type: none;
+    width: 100%;
+}
+#cart ul li {
+    padding: 0.25rem;
+    border-bottom: 1px solid var(--green);
+}
+#cart ul li button {
+    background-color: var(--red);
+    color: var(--white);
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    border-radius: 50%;
+    min-width: 1rem;
+    cursor: pointer;
+}
+#cart ul li span {
+    display: inline-block;
+    box-sizing: border-box;
+}
+.title {
+    width: calc(100% - 10rem);
+}
+.price {
+    width: 4rem;
+    text-align: right;
+}
+.quantity {
+    width: 2.5rem;
+    text-align: right;
+}
+.functions {
+    width: 2.5rem;
+    text-align: right;
+}
+
+nav {
+    background-color: var(--red);
+}
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+nav a {
+    display: inline-block;
+    padding: 1rem;
+    padding-top: calc(1rem + 4px);
+    color: var(--white);
+    text-decoration: none;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    border-bottom: 4px solid var(--red);
+}
+nav a:hover {
+    background-color: var(--yellow);
+    color: var(--black);
+    border-bottom: 4px solid var(--black);
+}
+
+/* KATEGORISIDE */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: 1rem;
+}
+main h2 {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+}
+main article {
+    max-width: 31%;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 1rem;
+    background-color: var(--black);
+    color: var(--white);
+    border-bottom: 1rem solid var(--green);
+}
+main article img {
+    max-width: 100%;
+    height: auto;
+}
+main article h3 {
+    margin: 0.25rem 0;
+    text-transform: uppercase;
+}
+main article a {
+    color: var(--yellow);
+    text-decoration: none;
+    font-size: 1rem;
+}
+main article span {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+main article button {
+    background-color: var(--green);
+    border: none;
+    font-family: var(--font);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
