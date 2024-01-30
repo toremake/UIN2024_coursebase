@@ -150,7 +150,7 @@ nav a {
     box-sizing: border-box;
     border-bottom: 4px solid var(--red);
 }
-nav a:hover {
+nav a:hover, .active {
     background-color: var(--yellow);
     color: var(--black);
     border-bottom: 4px solid var(--black);
