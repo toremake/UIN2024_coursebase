@@ -5,7 +5,7 @@ export default function Nav({category}){
     return(
         <nav>
             <ul>
-                {categoryList.map((item, index) => <li key={index+"cat"}><a className={category === item ? "active" : null} href="#">{item}</a></li>)}
+                {categoryList.map((item, i) => <li key={i+"cat"}><a className={category === item ? "active" : null} href="#">{item}</a></li>)}
             </ul>
         </nav>
     )
