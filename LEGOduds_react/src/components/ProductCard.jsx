@@ -1,10 +1,15 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 export default function ProductCard({category, img, title, price, setAmount, prodid, setCart, cart}){
  const [product, setProduct] = useState({
   title: title,
   price: price,
   prodid: prodid
  })
+
+ useEffect(()=>{
+  countProducts()
+ },[cart])
+
   const handleClick = ()=>{
     const exist = cart.find(item => item.prodid === product.prodid)
     setCart((prevCart) => 
@@ -13,11 +18,10 @@ export default function ProductCard({category, img, title, price, setAmount, pro
     prevCart.map(item =>  item.prodid === product.prodid ? {...item, quantity: item.quantity + 1} : item )
     :
     [...prevCart, {...product, quantity: 1}])
-    countProducts()
   }
 
   const countProducts =()=>{
-    setAmount(cart.reduce((total, item) => total + item.quantity, 1))
+    setAmount(cart.reduce((total, item) => total + item.quantity, 0))
   }
  
     return(
