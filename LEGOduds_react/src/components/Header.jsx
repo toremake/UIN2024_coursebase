@@ -10,10 +10,10 @@ export default function Header({amount, cart, setCart}){
 
     return(
       <header>
-            <img id="logo" src="website_images/LD_logo.svg" alt="LEGOdudes nettbutikk" />
+            <img id="logo" src="/website_images/LD_logo.svg" alt="LEGOdudes nettbutikk" />
             <button id="carttoggle" onClick={handleClick}>
                 <span id="cartcount">{amount}</span>
-                <img id="carticon" src="website_images/legocart.svg" alt="Din handlevogn" />
+                <img id="carticon" src="/website_images/legocart.svg" alt="Din handlevogn" />
             </button>
             <Cart toggle={toggle} cart={cart} setCart={setCart} />
         </header>
