@@ -82,10 +82,14 @@ header button span {
     padding: 1rem;
     opacity: 0;
     transition: ease-in-out .5s;
+    /*Satt z-index til å være 0 slik at den ikke ligger over menyen og blokkerer for punktene når den ikke er synlig*/
+    z-index: 0;
 }
 #cart.show {
     opacity: 1;
     right: 0;
+    /*Satt en høy z-index verdi slik at den kommer lengst frem på skjermen*/
+    z-index: 999;
 }
 #cart h2 {
     font-size: 1.2rem;
