@@ -1,3 +1,11 @@
+import { Link, Outlet } from "react-router-dom"
+
 export default function Categories(){
-    return <h1>Categories</h1>
+
+    return (
+        <>
+            <Outlet />
+        </>
+    
+    )
 }
