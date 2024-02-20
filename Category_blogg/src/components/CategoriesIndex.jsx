@@ -4,7 +4,7 @@ export default function CategoriesIndex(){
     return(
     <>
         <h1>Categories</h1>
-        <ul>
+        <ul className="category-list">
             {categoriesArray.map((category, index) => <li key={category+index}><Link to={category}>{category}</Link></li>)}
         </ul>
     </>)

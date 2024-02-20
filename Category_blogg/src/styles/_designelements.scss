@@ -1,0 +1,18 @@
+.category-list{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    li{
+        a{
+            padding: .5rem;
+            border: 1px solid;
+
+            &:hover{
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+}
