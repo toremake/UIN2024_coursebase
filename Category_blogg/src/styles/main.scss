@@ -9,5 +9,18 @@ body{
     background-color: $colorBlue;
 
 
+.status-box{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+}    
+.Alive{
+    background-color: green;
+}
+
+.Dead{
+    background-color: red;
+}
+
 
 }

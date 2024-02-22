@@ -7,15 +7,29 @@ import Category from './components/Category'
 import CategoriesIndex from './components/CategoriesIndex'
 import { posts } from './assets/posts'
 import PostPage from './components/PostPage'
+import { useEffect, useState } from 'react'
 
 function App() {
 
-  console.log(posts)
- 
+  const [content, setContent] = useState([])
+
+  const getData = async()=>{
+    const response = await fetch('https://rickandmortyapi.com/api/character')
+    const data = await response.json()
+    setContent(data.results)
+  }
+
+  useEffect(()=>{
+    getData()
+  },[])
+
+
+
+
   return (
     <Layout>
       <Routes>
-        <Route index element={<Home/>}/>
+        <Route index element={<Home content={content}/>}/>
         <Route path="categories/*" element={<Categories />}>
           <Route index element={<CategoriesIndex />}/>
           <Route path=':slug' element={<Category posts={posts} />}/>
