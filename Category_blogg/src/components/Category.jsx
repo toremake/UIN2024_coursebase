@@ -1,9 +1,8 @@
 import { useParams } from "react-router-dom"
-import { posts } from "../assets/posts"
 import { useEffect, useState } from "react"
 import PostCard from "./PostCard"
 
-export default function Category(){
+export default function Category({posts}){
     const {slug} = useParams()
     const [post, setPost] = useState()
 
