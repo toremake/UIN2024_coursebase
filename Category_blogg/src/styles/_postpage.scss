@@ -5,14 +5,18 @@
         padding: 1rem;
 
         form{
-            width: 100%;
-            margin-bottom: 1rem;
-            border: none;
-            min-height: 150px;
+
+            textarea{
+                width: 100%;
+                margin-bottom: 1rem;
+                border: none;
+                min-height: 150px;
+            }
 
             button{
                 background-color: rgb(28, 28, 28);
                 color: #fff;
+                margin-bottom: .5rem;
             }
         }
 
