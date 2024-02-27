@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 function App() {
   const [todos, setTodos] = useState([])
-
+  
   function updateTodo(index) {
     const currentTodos = [...todos]
     currentTodos[index].completed = !currentTodos[index].completed
@@ -13,13 +13,16 @@ function App() {
 
   useEffect(() => {
     document.addEventListener("keydown", function(Event) {
+      
       if(Event.key === "Enter") {
         const todotext = document.getElementById("newtodo").value
         if(todotext) {
           setTodos([...todos, {title: todotext, completed: false}])
-          //document.getElementById("newtodo").value = ""
+          document.getElementById("newtodo").value = ""
         }
+        
       }
+      
     })
   }, [todos])
   
