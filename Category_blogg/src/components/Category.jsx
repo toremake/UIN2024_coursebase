@@ -16,11 +16,12 @@ export default function Category({currentId}){
 
     useEffect(()=>{
         getCharacter()
-    },[])
+    },[currentId])
 
     console.log("sjekk", currentId)
     return (
     <section>
+        <p>{name}</p>
         <h1>{post?.name}</h1>
         <img src={post?.image} alt={post?.name} />
         <ul>
