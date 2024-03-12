@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Layout({children, logedIn}){
+export default function Layout({children, logedIn, setLogedIn}){
+    const handleClick = ()=>{
+        localStorage.setItem("logedIn", false)
+        setLogedIn(false)
+    }
     return (
         <>
         <header>
@@ -17,7 +21,7 @@ export default function Layout({children, logedIn}){
                     logedIn ? 
                     <>
                     <span>Brukernavn</span>
-                    <button>Logg ut</button>
+                    <button onClick={handleClick}>Logg ut</button>
                     </>
                     :
                     null
