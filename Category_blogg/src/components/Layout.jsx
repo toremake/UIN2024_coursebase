@@ -7,9 +7,9 @@ export default function Layout({children}){
         return saved || ""
     })
 
-    useEffect(()=>{
-        setUser(localStorage.removeItem("username"))
-    },[])
+    const handleClick = ()=>{
+        setUser(localStorage.setItem("username", "ackarlse"))
+    }
 
     console.log(user)
 
@@ -21,7 +21,7 @@ export default function Layout({children}){
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="characters">Characters</Link></li>
                 </ul>
-                <p>{user}</p>
+                {user?.length === 0 ? <button onClick={handleClick}>Logg inn</button> : <p>{user}</p>}
             </nav>
         </header>
         <main>
